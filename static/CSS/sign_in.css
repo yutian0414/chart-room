@@ -1,0 +1,18 @@
+.form-group{
+	padding-top:20px;
+	padding-bottom:20px;
+}
+body{
+	background-color: rgb(70,70,70);
+}
+#sign_in_div{
+	background-color: rgb(150,150,150);
+	border-style: solid;
+	border-width: 3px;
+}
+#body_container{
+	padding-top:10%;	
+}
+#form_title{
+	padding-bottom: 5%;
+}

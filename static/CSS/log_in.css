@@ -1,0 +1,15 @@
+#body_container{
+	padding-top: 10%;
+}
+body{
+	background-color: rgb(70,70,70);
+}
+#sign_in_div{
+	background-color: rgb(190,190,190);
+	border-width: 3px;
+	border-style: solid;
+	border-color: blue;
+}
+.form-group{
+	padding: 10px;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{{static_url('bootstrap-3.3.7-dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{static_url('bootstrap-3.3.7-dist/css/bootstrap-theme.min.css')}}">
+    <script src="{{static_url('bootstrap-3.3.7-dist/js/bootstrap.min.js')}}"></script>
+    <link rel="stylesheet" href="{{static_url('CSS/sign_in.css')}}">
+    <script src="{{static_url('vue.js')}}"></script>
+
+    <title>Chart Room - Sign in</title>
+</head>
+<body>
+<div class="container" id="body_container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" id="sign_in_div">
+            <div class="col-sm-12" id="form_title">
+                <h1 class="text-center">Input your information first</h1>
+            </div>
+            <div class="col-sm-12">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-3 control-label text-right">用户名：</label>
+                        <div class="col-sm-7">
+                            <input class="form-control" type="text" id="username" placeholder="请输入用户名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-3 control-label text-right">密码：</label>
+                        <div class="col-sm-7">
+                            <input class="form-control" type="password" id="password" placeholder="请输入密码">
+                        </div>
+                    </div>
+                     <div class="form-group" id="password_re_div">
+                        <label for="password_re" class="col-sm-3 control-label text-right">确认密码：</label>
+                        <div class="col-sm-7">
+                            <input class="form-control" type="password" id="password_re" placeholder="请再次输入密码" v-on:input="show_info">
+                        </div>
+                         <div class="col-sm-2" id="identify_hint" >[[ message ]]</div>
+                    </div>
+                    <div class="form-group" id="email_div">
+                        <label for="email" class="col-sm-3 control-label text-right">邮箱：</label>
+                        <div class="col-sm-7">
+                            <input class="form-control" type="email" id="email" placeholder="请输入邮箱">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address" class="col-sm-3 control-label text-right">居住地：</label>
+                        <div class="col-sm-7">
+                            <input class="form-control" type="text" id="address" placeholder="请输入居住地">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthday" class="col-sm-3 control-label text-right">生日：</label>
+                        <div class="col-sm-7">
+                            <input class="form-control" type="date" id="birthday" placeholder="请输入居住地">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="perfile" class="col-sm-3 control-label text-right">头像：</label>
+                        <div class="col-sm-7">
+                            <input class="form-control" type="file" placeholder="请秀美照" id="perfile">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-lg btn-primary btn-block">提交</button>
+                            <br>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-12">
+                <p class="text-right">已有账户？<span class="glyphicon glyphicon-arrow-right"></span><a href="#">点击登录</a></p>
+            </div>
+        </div>
+
+        <div class="col-sm-3"></div>
+    </div>
+</div>
+</body>
+    <script>
+    var identify_password=new Vue({
+        delimiters:['[[',']]'],
+        el:'#password_re_div',
+        data:{
+            message:""
+            },
+        methods:{
+            show_info:function(){
+            if (document.getElementById("password").value===document.getElementById("password_re").value){
+                this.message="密码一致";
+            }else{
+                this.message="密码不一致"
+                }
+            }
+        }
+    })
+
+</script>
+</html>
